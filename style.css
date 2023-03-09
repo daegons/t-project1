@@ -1,14 +1,14 @@
 /* 구글 폰트 */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 body {
-  background-image: url('https://t1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/brunch/service/user/1jPF/image/ZzM6LVP0MHhbtcqSpuHMjhqlFlI.jpg');
+  background-image: url("https://t1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/brunch/service/user/1jPF/image/ZzM6LVP0MHhbtcqSpuHMjhqlFlI.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -157,6 +157,7 @@ header {
 .popup-box .popup {
   opacity: 0;
   pointer-events: none;
+  transition: all 0.5s ease;
 }
 .popup-box.show,
 .popup-box.show .popup {
