@@ -1,14 +1,14 @@
 /* 구글 폰트 */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 body {
-  background-image: url("https://t1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/brunch/service/user/1jPF/image/ZzM6LVP0MHhbtcqSpuHMjhqlFlI.jpg");
+  background-image: url('https://t1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/brunch/service/user/1jPF/image/ZzM6LVP0MHhbtcqSpuHMjhqlFlI.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -71,6 +71,11 @@ header {
   flex-direction: column;
   justify-content: space-between;
 }
+/* 글자 박스에 다 들어오게 */
+.note .details {
+  max-height: 165px;
+  overflow-y: auto;
+}
 .note p {
   font-size: 22px;
   font-weight: 500;
@@ -110,7 +115,7 @@ header {
   transform-origin: bottom right;
   transition: transform 0.3s ease;
 }
-.settings:hover .menu {
+.settings.show .menu {
   transform: scale(1);
 }
 .settings .menu li {
