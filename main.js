@@ -1,3 +1,4 @@
+"use strict"; //엄격하게 js로 선언
 //상수 선언
 const addBox = document.querySelector('.add-box');
 const popupBox = document.querySelector('.popup-box');
