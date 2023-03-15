@@ -1,14 +1,14 @@
 /* 구글 폰트 */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 body {
-  background-image: url('https://t1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/brunch/service/user/1jPF/image/ZzM6LVP0MHhbtcqSpuHMjhqlFlI.jpg');
+  background-image: url("https://t1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/brunch/service/user/1jPF/image/ZzM6LVP0MHhbtcqSpuHMjhqlFlI.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -77,14 +77,14 @@ header {
   overflow-y: auto;
 }
 .note p {
-  font-size: 22px;
+  font-size: 16px;
   font-weight: 500;
 }
 .note span {
   display: block;
   margin-top: 5px;
   color: white;
-  font-size: 16px;
+  font-size: 15px;
 }
 .note .bottom-content {
   padding-top: 10px;
@@ -107,13 +107,14 @@ header {
   bottom: 0;
   right: -5px;
   padding: 5px 0;
-  background: white;
+  background: black;
   border-radius: 4px;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
   /* opacity: 0.7; */
   transform: scale(0);
   transform-origin: bottom right;
   transition: transform 0.3s ease;
+  border: 1px solid #9f9f9f;
 }
 .settings.show .menu {
   transform: scale(1);
