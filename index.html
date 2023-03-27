@@ -4,50 +4,189 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Note in JS</title>
-    <link rel="stylesheet" href="./style.css" />
-    <!-- 아이콘 및 폰트 -->
+    <title>Document</title>
     <link
       rel="stylesheet"
-      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+      href="https://use.fontawesome.com/releases/v6.2.0/css/all.css"
     />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/main_react.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/jquery-1.12.4.min.js"></script>
   </head>
+
   <body>
-    <!-- note 작성 수정 팝업 -->
-    <div class="popup-box">
-      <div class="popup">
-        <div class="content">
-          <header>
-            <p>후기 및 문의</p>
-            <i class="uil uil-times"></i>
-          </header>
-          <form action="#">
-            <div class="row title">
-              <label>이름</label>
-              <input type="text" id="name" />
-            </div>
-            <div class="row title">
-              <label>제목</label>
-              <input type="text" id="title" />
-            </div>
-            <div class="row description">
-              <label>내용</label>
-              <textarea></textarea>
-            </div>
-            <button>등록</button>
-          </form>
+    <div class="wrap">
+      <header class="header">
+        <a class="logo" href=""><img src="./img/logo.svg" alt="#" /></a>
+        <div class="login">
+          <i class="fa-solid fa-user"></i>
+          <span>로그인</span>
         </div>
+      </header>
+      <div class="home">
+        <ul class="homewrap">
+          <li>여행정보</li>
+          <li><i class="fa-solid fa-house"></i></li>
+          <li>게시판</li>
+        </ul>
       </div>
+      <div class="loginPage1">
+        <h2>회원가입</h2>
+        <form>
+          <div class="inputgroup">
+            <div class="inputfield">
+              <label for="us1">
+                <i class="fa-solid fa-user"></i>
+              </label>
+              <input type="text" placeholder="name" maxlength="10" id="us1" />
+            </div>
+            <div class="inputfield">
+              <label for="em1">
+                <i class="fa-solid fa-envelope"></i>
+              </label>
+              <input type="email" placeholder="email" id="em1" />
+            </div>
+            <div class="inputfield">
+              <label for="pw1">
+                <i class="fa-solid fa-lock"></i>
+              </label>
+              <input type="password" placeholder="password" id="pw1" />
+            </div>
+            <div class="inputfield">
+              <label for="ph1">
+                <i class="fa-solid fa-phone"></i>
+              </label>
+              <input type="tel" placeholder="Phone" maxlength="11" id="ph1" />
+            </div>
+            <p>비밀번호를 잊으셨나요? <a href="#">여기를 클릭하세요!</a></p>
+          </div>
+          <div class="btngroup">
+            <button type="button">로그인</button>
+            <button type="button">회원가입</button>
+          </div>
+        </form>
+      </div>
+      <div class="loginPage2">
+        <h2>회원가입</h2>
+        <form>
+          <div class="inputgroup">
+            <div class="inputfield">
+              <label for="us">
+                <i class="fa-solid fa-user"></i>
+              </label>
+              <input type="text" placeholder="name" maxlength="10" id="us" />
+            </div>
+            <div class="inputfield">
+              <label for="pw">
+                <i class="fa-solid fa-lock"></i>
+              </label>
+              <input type="password" placeholder="password" id="pw" />
+            </div>
+            <p>비밀번호를 잊으셨나요? <a href="#">여기를 클릭하세요!</a></p>
+          </div>
+          <div class="btngroup">
+            <button type="button">로그인</button>
+            <button type="button">회원가입</button>
+          </div>
+        </form>
+      </div>
+      <section class="section1">
+        <div class="border"></div>
+        <div class="inner">
+          <div class="left">
+            <h2>
+              여행정보를 <br />
+              찾고 계신가요?
+            </h2>
+            <form action="#">
+              <input
+                type="search"
+                placeholder="원하는 여행상품을 찾아보세요."
+              />
+              <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+            </form>
+            <h3>어디로, 언제 떠나시나요?</h3>
+            <div class="down">
+              <select id="btn"></select>
+              <i class="fa-solid fa-caret-down"></i>
+            </div>
+            <div class="up">
+              <select id="detail"></select>
+              <i class="fa-solid fa-caret-down"></i>
+            </div>
+            <div class="bottom">
+              <button type="button" class="search" onclick="mapOpen()">
+                검색하기
+              </button>
+            </div>
+          </div>
+          <div class="right">
+            <!-- left버튼 -->
+            <div class="pre" onclick="prevSlide()">
+              <button class="innerPre">
+                <i class="fa-solid fa-caret-left"></i>
+              </button>
+            </div>
+            <!-- stop버튼 -->
+            <div class="stop" onclick="stopSlide()">
+              <button class="innerStop">||</button>
+            </div>
+            <!-- right버튼 -->
+            <div class="next" onclick="nextSlide()">
+              <button class="innerNext">
+                <i class="fa-solid fa-caret-right"></i>
+              </button>
+            </div>
+            <!-- 슬라이드 -->
+            <div id="imgContainer">
+              <div class="imgBox">
+                <div class="img img1">
+                  <img src="./img/seoul1.png" alt="#" />
+                </div>
+                <div class="img img1">
+                  <img src="./img/seoul2.png" alt="#" />
+                </div>
+                <div class="img img1">
+                  <img src="./img/seoul3.png" alt="#" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="inner2">
+          <div class="left2">
+            <div class="clickAlram">
+              지도위의 마커를 선택해<br />
+              지역의 날씨를 확인하세요.
+            </div>
+            <div class="weatherInfo" style="position: relative"></div>
+            <div class="weatherIcon"></div>
+            <div class="nowTemp">
+              <div class="tempInfo"></div>
+              <span>°C</span>
+            </div>
+            <div class="bottomClose">
+              <button type="button" class="close" onclick="mapClose()">
+                돌아가기
+              </button>
+            </div>
+          </div>
+          <div class="right2">
+            <div id="map"></div>
+          </div>
+        </div>
+      </section>
     </div>
-    <!-- note 작성 수정 팝업 -->
 
-    <div class="wrapper">
-      <li class="add-box">
-        <div class="icon"><i class="uil uil-plus"></i></div>
-        <p>후기 및 문의</p>
-      </li>
-    </div>
-
-    <script src="./main.js"></script>
+    <div id="map" style="width: 60%; height: 500px; display: none"></div>
+    <script
+      type="text/javascript"
+      src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=e00ed7e6b241653cafa74d8894800a9c&libraries=services,clusterer,drawing"
+    ></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/slide.js"></script>
+    <script src="./js/map.js"></script>
   </body>
 </html>

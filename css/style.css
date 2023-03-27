@@ -1,0 +1,92 @@
+.overlaybox {
+  position: relative;
+  /* width: 360px; */
+  /* height: 100%; */
+  padding: 15px 10px;
+}
+.overlaybox div,
+ul {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+.overlaybox li {
+  list-style: none;
+}
+
+.overlaybox .first {
+  position: relative;
+  width: 247px;
+  height: 136px;
+  background: url("../img/16.jpg") no-repeat;
+  /* background: url("http://loremflickr.com/1280/720") no-repeat; */
+  background-size: cover;
+  margin-bottom: 8px;
+}
+.first .text {
+  color: #fff;
+  font-weight: bold;
+}
+
+.first .movietitle {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 7px 15px;
+  font-size: 14px;
+}
+.overlaybox ul {
+  width: 247px;
+}
+.overlaybox li {
+  position: relative;
+  margin-bottom: 2px;
+  background: #2b2d36;
+  padding: 5px 10px;
+  color: #ffffff;
+  line-height: 1;
+  /* cursor: pointer; */
+}
+.overlaybox li span {
+  display: inline-block;
+}
+.overlaybox li .number {
+  font-size: 13px;
+  font-weight: bold;
+}
+.overlaybox li .title {
+  font-size: 13px;
+}
+
+.overlaybox li:hover {
+  color: white;
+  background: #737373;
+}
+
+select {
+  -o-appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+#btn {
+  display: block;
+  width: 450px;
+  height: 60px;
+  border-radius: 30px;
+  padding-left: 30px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+#detail {
+  margin-top: 10px;
+  width: 450px;
+  height: 60px;
+  border-radius: 30px;
+  padding-left: 30px;
+  font-size: 20px;
+  font-weight: 700;
+}
