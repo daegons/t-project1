@@ -27,16 +27,3 @@ function mapClose() {
     inner.style.display = 'flex'
 }
 
-// .section1 {
-//     width: 85%;
-//     max-height: 2000px;
-//     top: 580px;
-//     left: 50%;
-//     transform: translate(-50%, -50%);
-//     height: 1000px;
-//     background-color: #f8f6f6;
-//     border-radius: 50px;
-//     padding-bottom: 20px;
-//     position: relative;
-//     overflow: hidden;
-// }

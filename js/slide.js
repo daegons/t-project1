@@ -178,3 +178,47 @@ function stopSlide() {
     }
 
 }
+
+
+
+
+// 스크롤 슬라이드
+const mainBtn = document.querySelectorAll('.mainBtn > li');
+const target = document.querySelector('.container');
+const target_top = target.getBoundingClientRect().height;
+
+let forSlide = 1
+mainBtn.forEach(i => {
+    i.addEventListener('click', (e) => {
+        const num = i.value;
+        forSlide = num
+        mHtml.animate({ scrollTop: ((num - 1) * target_top) });
+        mainBtn.forEach((i) => i.style.background = 'rgb(191, 7, 255, .3)')
+        mainBtn[forSlide - 1].style.background = 'rgb(191, 7, 255, 1)'
+    })
+})
+mainBtn[0].style.background = 'rgb(191, 7, 255, 1)'
+    for(let i in imgBoxAll)
+
+
+// 스크롤이벤트
+var mHtml = $("html");
+// 새로고침시 원래자리로 돌아옴
+mHtml.animate({ scrollTop: 0 }, 500);
+
+$(window).on("wheel", function (e) {
+    if (mHtml.is(":animated")) return;
+    if (e.originalEvent.deltaY > 0) {
+        if (forSlide == 2) return;
+        mainBtn.forEach((i) => i.style.background = 'rgb(191, 7, 255, .3)')
+        mainBtn[forSlide].style.background = 'rgb(191, 7, 255, 1)'
+        forSlide++;
+    } else if (e.originalEvent.deltaY < 0) {
+        if (forSlide == 1) return;
+        mainBtn.forEach((i) => i.style.background = 'rgb(191, 7, 255, .3)')
+        mainBtn[forSlide - 2].style.background = 'rgb(191, 7, 255, 1)'
+        forSlide--;
+    }
+    var posTop = (forSlide - 1) * target_top;
+    mHtml.animate({ scrollTop: posTop });
+})
