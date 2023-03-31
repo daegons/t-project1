@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Note in JS</title>
+        <!-- 아이콘 및 폰트 -->
+        <link
+            rel="stylesheet"
+            href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v6.2.0/css/all.css"
+        />
+        <link rel="stylesheet" href="./css/main.css" />
+        <link rel="stylesheet" href="./css/main_react.css" />
+        <link rel="stylesheet" href="./css/login.css" />
+        <link rel="stylesheet" href="./css/board.css" />
+        <link rel="stylesheet" href="./css/body_box.css" />
+        <link rel="stylesheet" href="./css/board_media.css" />
+        <script src="../js/jquery-1.12.4.min.js"></script>
+    </head>
+    <body>
+        <div class="boardWrap">
+            <div class="container container1">
+                <header class="header">
+                    <a class="logo" href="index.html"
+                        ><img src="./img/logo.svg" alt="#"
+                    /></a>
+                    <a class="logo2" href="index.html"
+                        ><img src="./img/logoMobile.svg" alt="#"
+                    /></a>
+                    <div class="login">
+                        <i class="fa-solid fa-user"></i>
+                        <span>로그인</span>
+                    </div>
+                </header>
+                <div class="home">
+                    <ul class="homewrap">
+                        <li>여행정보</li>
+                        <li><i class="fa-solid fa-house"></i></li>
+                        <li>게시판</li>
+                    </ul>
+                </div>
+                <div class="loginPage1">
+                    <h2>회원가입</h2>
+                    <form>
+                        <div class="inputgroup">
+                            <div class="inputfield">
+                                <label for="us1">
+                                    <i class="fa-solid fa-user"></i>
+                                </label>
+                                <input
+                                    type="text"
+                                    placeholder="name"
+                                    maxlength="10"
+                                    id="us1"
+                                />
+                            </div>
+                            <div class="inputfield">
+                                <label for="em1">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </label>
+                                <input
+                                    type="email"
+                                    placeholder="email"
+                                    id="em1"
+                                />
+                            </div>
+                            <div class="inputfield">
+                                <label for="pw1">
+                                    <i class="fa-solid fa-lock"></i>
+                                </label>
+                                <input
+                                    type="password"
+                                    placeholder="password"
+                                    id="pw1"
+                                />
+                            </div>
+                            <div class="inputfield">
+                                <label for="ph1">
+                                    <i class="fa-solid fa-phone"></i>
+                                </label>
+                                <input
+                                    type="tel"
+                                    placeholder="Phone"
+                                    maxlength="11"
+                                    id="ph1"
+                                />
+                            </div>
+                            <p>
+                                비밀번호를 잊으셨나요?
+                                <a href="#">여기를 클릭하세요!</a>
+                            </p>
+                        </div>
+                        <div class="btngroup">
+                            <button type="button" class="sbutton1">
+                                로그인
+                            </button>
+                            <button type="button" class="sbutton2">
+                                회원가입
+                            </button>
+                        </div>
+                    </form>
+                    <div class="sXmark"><i class="fa-solid fa-xmark"></i></div>
+                </div>
+                <div class="loginPage2">
+                    <h2>로그인</h2>
+                    <form>
+                        <div class="inputgroup">
+                            <div class="inputfield uswers">
+                                <label for="us">
+                                    <i class="fa-solid fa-user"></i>
+                                </label>
+                                <input
+                                    type="text"
+                                    placeholder="name"
+                                    maxlength="10"
+                                    id="us"
+                                />
+                            </div>
+                            <div class="inputfield pwd">
+                                <label for="pw">
+                                    <i class="fa-solid fa-lock"></i>
+                                </label>
+                                <input
+                                    type="password"
+                                    placeholder="password"
+                                    id="pw"
+                                />
+                            </div>
+                            <p>
+                                비밀번호를 잊으셨나요?
+                                <a href="#">여기를 클릭하세요!</a>
+                            </p>
+                        </div>
+                        <div class="btngroup">
+                            <button type="button" class="button1">
+                                로그인
+                            </button>
+                            <button type="button" class="button2">
+                                회원가입
+                            </button>
+                        </div>
+                    </form>
+                    <div class="lXmark"><i class="fa-solid fa-xmark"></i></div>
+                </div>
+                <section class="section1">
+                    <div class="border">
+                        <div class="wrapper">
+                            <li class="add-box">
+                                <div class="icon">
+                                    <i class="uil uil-plus"></i>
+                                </div>
+                                <p>후기 및 문의</p>
+                            </li>
+                        </div>
+                        <!-- 뱅기 -->
+                        <div class="wrap_box">
+                            <div class="character"></div>
+                        </div>
+                        <div class="wrap_box">
+                            <div class="character1"></div>
+                        </div>
+                        <!-- 뱅기 -->
+                    </div>
+                </section>
+
+                <!-- note 작성 수정 팝업 -->
+                <div class="popup-box">
+                    <div class="popup">
+                        <div class="content">
+                            <header>
+                                <p>후기 및 문의</p>
+                                <i class="uil uil-times"></i>
+                            </header>
+                            <form action="#">
+                                <div class="row title">
+                                    <label>이름</label>
+                                    <input type="text" id="name" />
+                                </div>
+                                <div class="row title">
+                                    <label>제목</label>
+                                    <input type="text" id="title" />
+                                </div>
+                                <div class="row description">
+                                    <label>내용</label>
+                                    <textarea></textarea>
+                                </div>
+                                <button>등록</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer2">
+                <div class="footerContent">
+                    <div class="fTop">
+                        <ul>
+                            <li class="messenger">
+                                <a href=""
+                                    ><i class="fa-brands fa-square-twitter"></i
+                                ></a>
+                            </li>
+                            <li class="messenger">
+                                <a href=""
+                                    ><i class="fa-brands fa-square-facebook"></i
+                                ></a>
+                            </li>
+                            <li class="messenger">
+                                <a href=""
+                                    ><i
+                                        class="fa-brands fa-square-instagram"
+                                    ></i
+                                ></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="fBottom">
+                        <ul>
+                            <li class="notice">이용약관</li>
+                            <li class="notice">개인정보처리방침</li>
+                            <li class="notice"></li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <script src="./js/board.js"></script>
+        <script src="../js/main.js"></script>
+        <script src="../js/login.js"></script>
+    </body>
+</html>

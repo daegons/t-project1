@@ -15,13 +15,12 @@ ul {
   width: 230px;
 }
 
-#map>div>div>div>div:last-child {
+#map > div > div > div > div:last-child {
   border-radius: 20px;
   width: 250px !important;
   height: 100%;
   border: 0px solid rgb(118, 129, 168) !important;
 }
-
 
 .overlaybox .first {
   position: relative;
@@ -32,7 +31,6 @@ ul {
   background-size: cover;
   margin-bottom: 8px;
 }
-
 
 .first .text {
   color: #fff;

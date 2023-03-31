@@ -1,0 +1,258 @@
+@media only screen and (max-width: 1300px) {
+
+    .bgColor.on {
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.7);
+        width: 100%;
+        height: 200vh;
+        z-index: 9;
+    }
+
+    .loginPage1 {
+        max-height: 780px;
+    }
+
+    .loginPage1 .userrors {
+        transform: translateY(15px);
+    }
+
+    .loginPage1 .pwderrors {
+        transform: translateY(29px);
+    }
+
+    .loginPage1 .emerrors {
+        transform: translateY(20px);
+    }
+
+    .loginPage1 .telerrors {
+        transform: translateY(30px);
+    }
+
+    .loginPage1 p {
+        transform: translateY(20px);
+    }
+
+
+    .loginPage2 p {
+        transform: translateY(20px);
+    }
+
+}
+
+@media only screen and (max-width: 1100px) {
+
+    .bgColor.on {
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.7);
+        width: 100%;
+        height: 3300px;
+        z-index: 9;
+    }
+
+
+    .loginPage2 {
+        width: 650px;
+        max-height: 700px;
+    }
+
+    .loginPage1 {
+        max-height: 750px;
+    }
+
+    .loginPage1 .btngroup {
+        transform: translateY(-25px);
+    }
+
+    .loginPage1 .userrors {
+        transform: translateY(28px);
+    }
+
+    .loginPage1 .pwderrors {
+        transform: translateY(43px);
+    }
+
+    .loginPage1 .emerrors {
+        transform: translateY(35px);
+    }
+
+    .loginPage1 .telerrors {
+        transform: translateY(46px);
+    }
+
+    .loginPage1 p {
+        transform: translateY(10px);
+    }
+
+    .loginPage2 p {
+        transform: translateY(20px);
+    }
+
+    .loginPage1 h2 {
+
+        bottom: 2rem;
+    }
+
+    .loginPage2 h2 {
+        bottom: 1rem;
+    }
+}
+
+
+@media only screen and (max-width: 625px) {
+
+    .bgColor.on {
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.7);
+        width: 100%;
+        height: 3100px;
+        z-index: 9;
+    }
+
+    .loginPage2 {
+        padding: 0;
+        width: 350px;
+        max-height: 350px;
+    }
+
+    .loginPage2 h2 {
+        transform: translateY(20px);
+        font-size: 1.5rem;
+    }
+
+    .loginPage2 .lXmark {
+        width: 25px;
+        height: 25px;
+    }
+
+    .loginPage2 .lXmark i {
+        font-size: 1rem;
+    }
+
+    .loginPage2 .btngroup {
+        transform: translateY(-45px);
+        width: 100%;
+        padding: 0 15px;
+
+    }
+
+    .loginPage2 .btngroup button {
+        flex-basis: 45%;
+        height: 35px;
+        font-size: 1rem;
+    }
+
+    .loginPage2 .inputfield {
+        height: 35px;
+    }
+
+    .loginPage2 .userror {
+        font-size: 0.5rem;
+        left: 3%;
+        top: 0;
+        transform: translate(5px, 38px);
+    }
+
+    .loginPage2 .pwderror {
+        font-size: 0.5rem;
+        left: 3%;
+        top: 0;
+        transform: translate(5px, 98px);
+    }
+
+    .loginPage1 {
+        width: 350px;
+        max-height: 400px;
+        padding: 0;
+    }
+
+
+    .loginPage1 .inputgroup {
+        width: 100%;
+        height: 100%;
+        transform: translateY(-10px);
+    }
+
+    .loginPage1 h2 {
+        transform: translateY(20px);
+        font-size: 1.5rem;
+    }
+
+    .loginPage1 .inputfield {
+        height: 35px;
+    }
+
+    .loginPage1 .sXmark {
+        width: 25px;
+        height: 25px;
+    }
+
+    .loginPage1 .sXmark i {
+        font-size: 1rem;
+    }
+
+    .loginPage1 .inputgroup {
+        width: 100%;
+        height: 100%;
+    }
+
+    .loginPage1 .btngroup {
+        transform: translateY(-45px);
+        width: 100%;
+        padding: 0 15px;
+
+    }
+
+    .loginPage1 .btngroup button {
+        flex-basis: 45%;
+        height: 35px;
+        font-size: 1rem;
+    }
+
+    .loginPage1 .userrors {
+        font-size: 0.5rem;
+        left: 3%;
+        top: 0;
+        transform: translate(5px, 37px);
+    }
+
+    .loginPage1 .pwderrors {
+        font-size: 0.5rem;
+        left: 3%;
+        top: 0;
+        transform: translate(5px, 158px);
+    }
+
+    .loginPage1 .emerrors {
+        font-size: 0.5rem;
+        left: 3%;
+        top: 0;
+        transform: translate(5px, 97px);
+    }
+
+    .loginPage1 .telerrors {
+        font-size: 0.5rem;
+        left: 3%;
+        top: 0;
+        transform: translate(5px, 220px);
+    }
+
+    .loginPage1 p {
+        transform: translateY(5px);
+        font-size: 0.8rem;
+    }
+
+    .loginPage2 p {
+        transform: translateY(0px);
+        margin: 10px 0;
+        font-size: 0.8rem;
+    }
+
+    .loginPage1 h2 {
+
+        bottom: 1rem;
+    }
+
+    .loginPage2 h2 {
+        bottom: 0;
+    }
+}
