@@ -60,6 +60,20 @@
     padding: 30px;
   }
 
+  .section2 .article1.on {
+    opacity: 1;
+    position: absolute;
+    width: 1000px;
+    height: 400px;
+    background: rgb(255, 255, 255);
+    border-radius: 30px;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    transition-delay: .4s;
+  }
+
   .tleft {
     display: flex;
     padding: 25px;
@@ -67,6 +81,12 @@
     align-items: center;
     text-align: center;
     justify-content: space-around;
+  }
+
+  .mright {
+    display: flex;
+    position: relative;
+    width: 720px;
   }
 
   .mright>img {
@@ -267,8 +287,8 @@
     position: relative;
   }
 
-
   .section2 .article1 {
+    opacity: 1;
     position: absolute;
     width: 85%;
     height: 1200px;
@@ -290,6 +310,8 @@
     position: relative;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    height: 750px;
   }
 
   .mright>img {

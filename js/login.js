@@ -31,6 +31,7 @@ btns1.addEventListener("click", function () {
         loginPage1.style.display = "none";
         loginPage2.style.display = "block";
     }
+    
 });
 
 // 로그인 버튼 끝-----------------------------------------------------------
@@ -83,6 +84,7 @@ btn1.addEventListener("click", function () {
         pw.focus();
     }
     if (regIdPw.test(us.value) && regIdPw.test(pw.value)) {
+       $(".bgColor").removeClass("on")
         alert("로그인이 완료되었습니다.");
         us.value = null;
         pw.value = null;
@@ -99,28 +101,23 @@ btn1.addEventListener("click", function () {
     }
 
     tex.addEventListener("click", function () {
-        alert("로그아웃이 완료 되었습니다.");
+        if(tex.innerText == "로그아웃"){
+            alert("로그아웃이 완료 되었습니다.");
+        }
         tex.innerText = "로그인";
         if ($(".login i").removeClass("fa-solid fa-arrow-right-from-bracket")) {
             $(".login i").addClass("fa-solid fa-user");
         }
-        return false;
     });
-    return false;
 });
 
 us.addEventListener("focusout", function () {
     if (!regIdPw.test(us.value)) {
         userror.innerText = "@아이디가 정확하지 않습니다.";
         userror.style.color = "red";
-        // btn1.addEventListener("click", function () {
-        //     alert("아이디를 다시 입력하세요.");
-        //     us.focus();
-        // });
     } else {
         userror.innerText = "@아이디를 제대로 입력하셨습니다.";
         userror.style.color = "green";
-        // return e.preventDefault();
     }
 
     if (!regIdPw.test(us.value)) {
@@ -133,15 +130,9 @@ pw.addEventListener("focusout", function () {
     if (!regIdPw.test(pw.value)) {
         pwderror.innerText = "@비밀번호가 정확하지 않습니다.";
         pwderror.style.color = "red";
-        // btn1.addEventListener("click", function () {
-        //     alert("비밀번호를 다시 입력하세요.");
-        //     pw.focus();
-
-        // });
     } else {
         pwderror.innerText = "@비밀번호를 제대로 입력하셨습니다.";
         pwderror.style.color = "green";
-        // return e.preventDefault();
     }
 });
 
@@ -160,7 +151,6 @@ const telerrors = document.querySelector(".telerrors");
 let regem = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+$/;
 let regph = /^01(?:0|1|[6-9])+(?:\d{3}|\d{4})+\d{4}$/;
 
-// console.log(userrors,pwderrors, emerrors, telerrors )
 
 btns2.addEventListener("click", function () {
     if (us1.value === "") {

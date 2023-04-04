@@ -9,14 +9,16 @@
 
 body {
   font-family: 'Noto Sans KR', sans-serif;
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 a {
   color: inherit;
-}
-
-body {
-  overflow-x: hidden;
+  text-decoration: none;
 }
 
 .mainBtn {
@@ -64,6 +66,7 @@ body {
   overflow: hidden;
 }
 
+
 .header {
   position: fixed;
   width: 100%;
@@ -107,6 +110,40 @@ body {
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
   overflow: hidden;
   transition: all 0.5s;
+  z-index: 9999;
+}
+
+.homeCancel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 65px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.homeCancel.on {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: fixed;
+  top: 130px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  background-color: #bf07ff;
+  color: white;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+  opacity: 1;
   z-index: 9999;
 }
 
@@ -785,20 +822,36 @@ select {
   width: 100vw;
   height: 100vh;
   background: rgba(87, 7, 255, 0.9);
-  margin-top: 65.5px;
   position: relative;
 }
 
 .section2 .article1 {
+  opacity: 0;
   position: absolute;
   width: 1200px;
   height: 400px;
   background: rgb(255, 255, 255);
   border-radius: 30px;
-  top: 40%;
+  top: 47%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 30px;
+  transition: all .7s;
+  
+}
+
+.section2 .article1.on {
+  opacity: 1;
+  position: absolute;
+  width: 1200px;
+  height: 400px;
+  background: rgb(255, 255, 255);
+  border-radius: 30px;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 30px;
+  transition-delay: .2s;
 }
 
 .section2 .article1 .articleContents {
@@ -812,6 +865,8 @@ select {
 
 .swrap {
   display: flex;
+  position: relative;
+  top: 10px;
 }
 
 /* .texts 시작 */
@@ -875,6 +930,34 @@ select {
 .tleft .best p {
   color: #5707ff;
   padding: 20px;
+  animation: pop 2s ease infinite;
+}
+
+@keyframes pop {
+  0%{
+    /* transform: translateY(0px); */
+    opacity: 1;
+  }
+  10%{
+    /* transform: translateY(5px); */
+    opacity: 0.5;
+  }
+  20%{
+    /* transform: translateY(0px); */
+    opacity: 1;
+  }
+  30%{
+    /* transform: translateY(5px); */
+    opacity: 0.5;
+  }
+  40%{
+    /* transform: translateY(0px); */
+    opacity: 1;
+  }
+  100%{
+    /* transform: translateY(0px); */
+    opacity: 1;
+  }
 }
 
 .tleft .hot>img {
@@ -890,6 +973,7 @@ select {
 .mright {
   display: flex;
   position: relative;
+  width: 900px;
 }
 
 .mright>img {
@@ -898,6 +982,29 @@ select {
   object-fit: cover;
   padding: 1rem;
   border-radius: 30px;
+}
+
+.mright>img:nth-child(1) {
+  animation: show .7s ease;
+}
+.mright>img:nth-child(2) {
+  animation: show .7s ease;
+}
+.mright>img:nth-child(3) {
+  animation: show .7s ease;
+}
+
+@keyframes show {
+  0%{
+    /* scale: .9; */
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100%{
+    /* scale: 1; */
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
 
 .mright .imgs1 {
@@ -915,7 +1022,6 @@ select {
   bottom: 0;
   background-color: white;
   text-align: center;
-  bottom: 65.5px;
   justify-content: center;
   align-items: center;
 }

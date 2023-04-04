@@ -5,13 +5,13 @@ document.querySelector("#map > div > div > div > div:last-child img ");
 var mapContainer = document.getElementById("map"), // 지도를 표시할 div
   mapOption = {
     center: new kakao.maps.LatLng(36.436373, 128.034173), // 지도의 중심좌표
-    level: 11, // 지도의 확대 레벨
+    level: 10, // 지도의 확대 레벨
   };
 
 var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
 function mapOpen() {
-  mapContainer.style.display = "block";
+    mapContainer.style.display = "block";
 }
 
 // 지도를 전달받은 위도, 경도 값으로 부드럽게 이동시키는 함수
@@ -29,7 +29,7 @@ var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
 
 // 화면에 마커를 표시하는 함수
 var markers = [];
-function addMarker(position, nameAll, lat, lng, address, phone) {
+function addMarker(position, nameAll,lat, lng, address, phone) {
   var marker = new kakao.maps.Marker({
     map: map, //
     position: position,
@@ -97,6 +97,7 @@ $.get("./json/info.json", function (data) {
 //----------------------정보박스------------------------------
 function cityMarker(city) {
   // 시도명을 인수로 받아 마크를 표시하는 함수선언
+  if(city != 'none'){
   let cityList = global.filter((a) => {
     let sidoList = a.sidoName.split(" ");
     return sidoList[0] === city;
@@ -115,11 +116,12 @@ function cityMarker(city) {
 
   // 지도위치를 현재 선택한 도시의 첫번째 레코드의 위도, 경도값으로 이동하는 함수 호출
   panTo(cityList[0].lat, cityList[0].lng);
-  // }
+ }
 }
 
 // 시도명을 인수로 받아 마크를 표시하는 함수선언
 function cityMarker2(city) {
+  if(city != 'none'){
   let cityList = global.filter((a) => {
     let sidoList = a.sidoName.split(" ");
     return sidoList[1] === city;
@@ -130,17 +132,20 @@ function cityMarker2(city) {
       cityList[i].name,
       cityList[i].lat,
       cityList[i].lng,
+      cityList[i].address,
+      cityList[i].phone,
     );
   }
 
   // 지도위치를 현재 선택한 도시의 첫번째 레코드의 위도, 경도값으로 이동하는 함수 호출
   panTo(cityList[0].lat, cityList[0].lng);
 }
+}
 
 // 시도명을 인수로 받아 구군셀렉트를 나타내는 함수선언
 function sebu(city) {
   let sebuList = [];
-  let option = "";
+  let option = `<option value="none">자세한 지역을 선택해주세요.</option>`;
 
   let cityList = global.filter((a) => {
     let sidoList = a.sidoName.split(" ");
@@ -177,15 +182,17 @@ function useData(globalData) {
   let cityIndex = list.filter((a, b) => list.indexOf(a) === b);
   cityIndex.sort();
 
-  let button = "";
-  let btnAll = "";
+  let button = `<option id="btnn" value="none">지역을 선택해주세요.</option>`;
+  
 
   cityIndex.map((value) => {
     button += `<option id="btnn" value="${value}">${value}</option>`;
   });
-
-  $("#btn").html(button);
+  $('#btn').html(button)
 }
+
+
+
 
 //이벤트
 $("#detail").change(function () {
@@ -201,6 +208,7 @@ $("#btn").click((e) => {
   sebu(city);
   $(this).addClass("on");
   map.getLevel = 10;
+  
 });
 
 var level = map.getLevel();
