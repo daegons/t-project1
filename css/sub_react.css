@@ -38,6 +38,10 @@
     color: #5707ff;
     padding: 10px;
   }
+  .wrap {
+    height: 150vh;
+    position: relative;
+  }
   .skill_container {
     width: 100%;
     height: 100%;
