@@ -1,0 +1,456 @@
+/* section border구역 */
+
+.section1 {
+  width: 94%;
+  max-height: 730px;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  background-color: #f8f6f6;
+  border-radius: 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+.section1::before {
+  content: "";
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  width: 900px;
+  height: 700px;
+  transform-origin: bottom left;
+  background: linear-gradient(to right, #f8f6f6, #bf07ff, #5707ff);
+  animation: round 5s linear infinite;
+}
+
+.section1::after {
+  content: "";
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  width: 900px;
+  height: 700px;
+  transform-origin: bottom left;
+  background: linear-gradient(to right, #f8f6f6, #bf07ff, #5707ff);
+  animation: round 5s linear infinite;
+  animation-delay: -2.5s;
+}
+
+@keyframes round {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.border {
+  position: absolute;
+  z-index: 1;
+  background-color: #ffffff;
+  inset: 3px;
+  border-radius: 50px;
+}
+/* 뱅기 */
+
+.character {
+  width: 50px;
+  height: 50px;
+  /* border-radius: 50%; */
+  background-image: url(./icons8-airplane-take-off-100.png);
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.character1 {
+  width: 50px;
+  height: 50px;
+  /* border-radius: 50%; */
+  background-image: url(./icons8-airplane-take-off-64.png);
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* 뱅기 */
+
+/* div left 구역 */
+
+/* .inner {
+  display: flex;
+  position: absolute;
+  width: 1300px;
+  margin: 0 auto;
+  padding: 0.1rem 5rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 1.5s;
+  z-index: 5;
+} */
+
+/* .left {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  padding: 0 40px;
+  align-items: center;
+} */
+
+/* .inner .left h2 {
+  position: relative;
+  letter-spacing: 0.05em;
+  padding-bottom: 0.8rem;
+  transform: translateX(-45%);
+  font-size: 2.2rem;
+  font-weight: 500;
+  padding-top: 35px;
+  left: 7%;
+  color: #3a3a3a;
+} */
+
+/* .inner form {
+  position: relative;
+} */
+
+/* .inner form i {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translate(-50%, -50%);
+  bottom: 0rem;
+  font-size: 1.3rem;
+  color: #5707ff;
+} */
+
+/* .inner form input {
+  border: 1px solid #6e6e6e;
+  border-radius: 50px;
+  width: 410px;
+  height: 55px;
+  margin-bottom: 2rem;
+  cursor: pointer;
+} */
+
+/* input::placeholder {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  left: 5%;
+  color: #9c9c9c;
+} */
+
+/* .inner h3 {
+  margin-bottom: 0.7rem;
+  transform: translateX(-60%);
+  font-size: 1rem;
+  font-weight: 500;
+} */
+
+/* select {
+  -o-appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+} */
+
+/* #btn {
+  display: block;
+  width: 410px;
+  height: 55px;
+  border-radius: 30px;
+  padding-left: 30px;
+  font-size: 20px;
+  font-weight: 700;
+  border: 1px solid #6e6e6e;
+  cursor: pointer;
+} */
+
+/* #detail {
+  margin-top: 20px;
+  width: 410px;
+  height: 55px;
+  border-radius: 30px;
+  padding-left: 30px;
+  font-size: 20px;
+  font-weight: 700;
+  border: 1px dashed #868686;
+  cursor: pointer;
+} */
+
+/* .bottom {
+  display: flex;
+  margin: 0 auto;
+  margin-top: 2rem;
+} */
+
+/* .search {
+  width: 240px;
+  height: 60px;
+  background-color: #5707ff;
+  border-radius: 50px;
+  margin-top: 1rem;
+  border: none;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+} */
+/* 
+.down {
+  position: relative;
+} */
+
+/* .down i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 2rem;
+  font-size: 1.5rem;
+  pointer-events: none;
+  color: #5707ff;
+} */
+
+/* .up {
+  position: relative;
+} */
+
+/* .up i {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%+20px);
+  right: 2rem;
+  font-size: 1.5rem;
+  pointer-events: none;
+  color: #5707ff;
+} */
+
+/* div right 구역 (img slide) */
+
+/* .right {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+
+/* #imgContainer {
+  display: inline-block;
+  position: relative;
+  width: 450px;
+  height: 520px;
+  margin: 0 1em;
+  overflow: hidden;
+  border-radius: 0 50px 0 50px;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+#imgContainer .imgBox {
+  width: 100%;
+  display: flex;
+  position: absolute;
+}
+
+#imgContainer .imgBox img {
+  width: 450px;
+} */
+
+/* .pre {
+  position: absolute;
+  z-index: 9;
+  bottom: -12px;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: white;
+  transform: translateX(-50px);
+  cursor: pointer;
+}
+
+.innerPre {
+  cursor: pointer;
+}
+
+.pre > button {
+  position: absolute;
+  background: none;
+  border: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #5707ff;
+  font-size: 20px;
+  font-weight: 600;
+} */
+
+.next {
+  position: absolute;
+  z-index: 9;
+  bottom: -12px;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: white;
+  transform: translateX(50px);
+  cursor: pointer;
+}
+
+.innerNext {
+  cursor: pointer;
+}
+/* 
+.next > button {
+  background: none;
+  border: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  color: #5707ff;
+  font-size: 20px;
+  font-weight: 600;
+} */
+
+/* .stop {
+  position: absolute;
+  bottom: -12px;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: white;
+  cursor: pointer;
+  z-index: 99;
+} */
+
+/* .innerStop {
+  cursor: pointer;
+} */
+/* 
+.stop > button {
+  background: none;
+  border: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  color: #5707ff;
+  font-size: 14px;
+  font-weight: 600;
+} */
+
+/* inner2 */
+
+.inner2 {
+  display: flex;
+  position: absolute;
+  width: 1300px;
+  margin: 0 auto;
+  padding: 0.1rem 5rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all 1.5s;
+}
+
+/* .left2 {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  padding: 0 40px;
+  align-items: center;
+  letter-spacing: 0.05em;
+  line-height: 2em;
+  font-size: 20px;
+}
+
+.left2 .clickAlram {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  text-align: center;
+  line-height: 1.5em;
+}
+
+.left2 .weatherInfo {
+  padding-top: 30px;
+  flex: 2 1 0;
+}
+
+.left2 .weatherIcon {
+  flex: 2 1 0;
+  display: flex;
+  align-items: center;
+  font-size: 80px;
+  color: #5707ff;
+}
+
+.left2 .tourName {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.left2 .nowTemp {
+  flex: 1 1 0;
+  font-size: 30px;
+  font-weight: 600;
+  display: flex;
+}
+
+.left2 .nowTemp span {
+  display: none;
+}
+
+.left2 .tempInfo {
+  text-align: center;
+  display: inline-block;
+  font-size: 30px;
+  color: #3a3a3a;
+  font-weight: 600;
+} */
+
+.bottomClose {
+  display: flex;
+  flex: 1 1 0;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+.close {
+  width: 240px;
+  height: 60px;
+  background-color: #5707ff;
+  border-radius: 50px;
+  margin-top: 1rem;
+  border: none;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+/* .right2 {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+
+#map {
+  display: inline-block;
+  position: relative;
+  width: 450px;
+  height: 520px;
+  margin: 0 1em;
+  overflow: hidden;
+  border-radius: 0 50px 0 50px;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* section1 끝 */
