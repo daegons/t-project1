@@ -1,21 +1,22 @@
 /* 구글 폰트 */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
-
 a {
   color: inherit;
 }
-
 body {
   overflow-x: hidden;
-
   /* overflow-y: hidden; */
+}
+
+.boardWrap {
+  height: 120vh;
 }
 
 .wrapper {
@@ -24,18 +25,15 @@ body {
   gap: 15px;
   grid-template-columns: repeat(auto-fill, 265px);
 }
-
 .wrapper li {
   height: 250px;
   list-style: none;
-  background: rgb(84 61 213);
+  background: rgb(69 38 243);
   color: white;
   opacity: 0.7;
   border-radius: 20px;
   padding: 15px 20px 20px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
-
 .add-box,
 .icon,
 .bottom-content,
@@ -46,13 +44,11 @@ header {
   align-items: center;
   justify-content: space-between;
 }
-
 .add-box {
   flex-direction: column;
   justify-content: center;
   cursor: pointer;
 }
-
 .add-box .icon {
   height: 78px;
   width: 78px;
@@ -63,43 +59,41 @@ header {
   justify-content: center;
   transition: all 0.5s;
 }
-
 .add-box p {
   color: white;
   font-weight: 500;
   margin-top: 20px;
   transition: all 0.5s;
 }
-
 .add-box:hover .icon {
   transform: scale(1.1);
-  background: rgb(68, 44, 203);
+  background: rgb(39 0 255);
 }
 
 .add-box:hover p {
   transform: scale(1.1);
 }
-
 .wrapper .note {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background: #745ee9;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-
-.wrapper .note:hover {
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.8);
-}
-
 /* 글자 박스에 다 들어오게 */
 .note .details {
   max-height: 165px;
-  word-wrap: break-word;
-  overflow: auto;
+  /* width: 100%;
+  height: 100%; */
+  overflow-y: auto;
+  /* background: white; */
+  /* color: black; */
+  /* border-radius: 10px; */
 }
-
+/* .note .details .des {
+  width: 100%;
+  height: 100%;
+  background: white;
+} */
 .note p {
   font-size: 16px;
   font-weight: 500;
@@ -112,27 +106,22 @@ header {
   color: rgb(255, 255, 255);
   font-size: 15px;
 }
-
 .note .bottom-content {
   padding-top: 10px;
   border-top: 1px solid white;
 }
-
 .bottom-content span {
   color: white;
   font-size: 14px;
 }
-
 .bottom-content .settings i {
   color: white;
   font-size: 15px;
   cursor: pointer;
 }
-
 .settings {
   position: relative;
 }
-
 .settings .menu {
   position: absolute;
   bottom: 0;
@@ -147,12 +136,10 @@ header {
   transition: transform 0.3s ease;
   border: 1px solid #9f9f9f;
 }
-
 .settings.show .menu {
   transform: scale(1);
   background: #444444;
 }
-
 .settings .menu li {
   height: 25px;
   font-size: 16px;
@@ -163,11 +150,9 @@ header {
   cursor: pointer;
   background: #444444;
 }
-
 .menu li i {
   padding-right: 8px;
 }
-
 .menu li:hover {
   background: rgb(21, 21, 21);
 }
@@ -183,7 +168,6 @@ header {
   height: 100%;
   width: 100%;
 }
-
 .popup-box .popup {
   position: absolute;
   top: 50%;
@@ -196,7 +180,6 @@ header {
   justify-content: center;
   /* background: red; */
 }
-
 /* .popup-box .popup 수정해도js로 작동됨 차후 수정 */
 .popup-box,
 .popup-box .popup {
@@ -204,53 +187,44 @@ header {
   pointer-events: none;
   transition: all 0.5s ease;
 }
-
 .popup-box.show,
 .popup-box.show .popup {
   opacity: 1;
   pointer-events: auto;
   transition: all 0.3s ease;
 }
-
 /* .popup-box .popup 수정해도js로 작동됨 차후 수정 */
 .popup .content {
   width: calc(100% - 15px);
   border-radius: 5px;
   background: rgb(98 81 191);
 }
-
 .popup .content header {
   padding: 15px 25px;
   border-bottom: 1px solid #5f5ecd;
 }
-
 .content header p {
   font-size: 20px;
   font-weight: 500;
   color: white;
 }
-
 .content header i {
   color: white;
   cursor: pointer;
   font-size: 23px;
 }
-
 .content form {
   margin: 15px 25px 35px;
 }
-
 .content form .row {
   margin-bottom: 20px;
 }
-
 form .row label {
   display: block;
   font-size: 18px;
   margin-bottom: 6px;
   color: white;
 }
-
 .content form :where(input, textarea) {
   width: 100%;
   height: 50px;
@@ -261,7 +235,6 @@ form .row label {
   border: 1px solid #999;
   background: white;
 }
-
 .content form textarea {
   height: 150px;
   resize: none;
@@ -278,43 +251,4 @@ form .row label {
   font-size: 17px;
   border-radius: 4px;
   cursor: pointer;
-}
-
-/* 푸터 */
-
-.footer2 {
-  display: flex;
-  position: absolute;
-  width: 100vw;
-  height: 150px;
-  background-color: white;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-}
-
-.footerContent {
-  display: flex;
-  width: 80%;
-}
-
-.footer2 .fTop {
-  display: flex;
-  flex: 1 1 0;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer2 .footerContent .fTop ul li {
-  display: inline-block;
-  font-size: 25px;
-  color: #5707ff;
-  padding: 20px;
-}
-
-.footer2 .fBottom {
-  display: flex;
-  flex: 1 1 0;
-  justify-content: center;
-  align-items: center;
 }

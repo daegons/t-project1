@@ -30,17 +30,18 @@
     display: none;
   }
 }
-
+@media (max-width: 640px) {
+  .wrap {
+    height: 180vh;
+    position: relative;
+  }
+}
 @media (max-width: 625px) {
   .footer .footerContent .fTop ul li {
     display: inline-block;
     font-size: 25px;
     color: #5707ff;
     padding: 10px;
-  }
-  .wrap {
-    height: 150vh;
-    position: relative;
   }
   .skill_container {
     width: 100%;
@@ -52,5 +53,9 @@
     padding: 1rem 270px;
     margin: 5px 0px;
     display: none;
+  }
+  .wrap {
+    height: 170vh;
+    position: relative;
   }
 }

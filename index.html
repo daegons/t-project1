@@ -17,10 +17,6 @@
     <link rel="stylesheet" href="./css/login.css" />
     <link rel="stylesheet" href="./css/login_react.css" />
     <script src="./js/jquery-1.12.4.min.js"></script>
-        <script
-      type="text/javascript"
-      src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=e00ed7e6b241653cafa74d8894800a9c&libraries=services,clusterer,drawing" 
-    ></script>
   </head>
 
   <body>
@@ -155,25 +151,31 @@
           <div class="inner">
             <div class="left">
               <h2>
-                여행정보를 <br />
-                찾고 계신가요?
+                지역명을<br />
+                검색해보세요!
               </h2>
-              <form action="#">
+              <!-- onkeyup="if(window.event.keyCode==13){searchTravel()} -->
+              <form
+                action="#"
+                onkeyup="if(window.event.keyCode==13){searchTravel()}"
+              >
                 <input
-                  id="travelSearch"
                   type="search"
-                  onkeyup="if(window.event.keyCode==13){searchTravel()}"
+                  id="travelSearch"
                   placeholder="원하는 여행상품을 찾아보세요."
                 />
-                <div class="userror"></div>
-                <a href="#" onclick="searchTravel()"
-                  ><i class="fa-solid fa-magnifying-glass"></i
-                ></a>
+                <button
+                  class="itemSearch"
+                  type="button"
+                  onclick="searchTravel()"
+                >
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
               </form>
-              <h3>어디로, 언제 떠나시나요?</h3>
+              <h3>여행 할 지역을 선택해주세요!</h3>
               <div class="down">
                 <select id="btn">
-                  <option>지역을 선택하세요.</option>
+                  <option></option>
                 </select>
                 <i class="fa-solid fa-caret-down"></i>
               </div>
@@ -183,7 +185,7 @@
               </div>
               <div class="bottom">
                 <button type="button" class="search" onclick="mapOpen()">
-                  검색하기
+                  지도보기
                 </button>
               </div>
             </div>
@@ -272,9 +274,15 @@
                   </div>
                 </div>
                 <div class="mright">
-                  <img src="./img/11.jpg" alt="#" />
-                  <img src="./img/12.jpg" alt="#" />
-                  <img src="./img/13.jpg" alt="#" />
+                  <div class="imgRandom img1">
+                    <img src="./img/11.jpg" alt="#" />
+                  </div>
+                  <div class="imgRandom img2">
+                    <img src="./img/12.jpg" alt="#" />
+                  </div>
+                  <div class="imgRandom img3">
+                    <img src="./img/13.jpg" alt="#" />
+                  </div>
                 </div>
               </div>
             </div>
@@ -308,7 +316,10 @@
     </div>
 
     <div id="map" style="width: 60%; height: 500px; display: none"></div>
-
+    <script
+      type="text/javascript"
+      src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=efe73cb24df832861f0ab6d9ad042bcc&libraries=services,clusterer,drawing"
+    ></script>
     <script src="./js/common.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/index.js"></script>

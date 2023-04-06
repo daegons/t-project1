@@ -1,5 +1,6 @@
 let imgChange = document.querySelector(".section2 .best > p");
 let mright = document.querySelector(".mright");
+// let imgRandom_img = document.querySelectorAll(".imgRandom > img ");
 
 imgChange.addEventListener("click", () => {
   const imgArray = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
@@ -17,12 +18,14 @@ imgChange.addEventListener("click", () => {
   change2 += `<img src="./img/${randomValue+1}.jpg" alt="#" />`;
   change3 += `<img src="./img/${randomValue-1}.jpg" alt="#" />`;
   
-  $(".mright>img").remove();
-  $(".mright").append(change1);
+  $(".imgRandom > img ").remove();
+  $(".img1").append(change1);
   setTimeout(function() {
-    $(".mright").append(change2);
+    $(".img2").append(change2);
   }, 100);
   setTimeout(function() {
-    $(".mright").append(change3);
+    $(".img3").append(change3);
   }, 200);
 });
+
+

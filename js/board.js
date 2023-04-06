@@ -74,7 +74,7 @@ function showNotes() {
   });
 }
 showNotes();
-// ----------------delete/edit박스-----------------
+//settings박스---------------v------------------
 function showMenu(elem) {
   elem.parentElement.classList.add("show");
   document.addEventListener("click", (e) => {
@@ -117,14 +117,7 @@ addBtn.addEventListener("click", (e) => {
   let noteTitle = titleTag.value;
   let noteDesc = descTag.value;
 
-  if (!noteName) {
-    //(noteName || noteTitle || noteDesc)
-    alert("이름을 입력하세요 :(");
-  } else if (!noteTitle) {
-    alert("제목을 입력하세요 :(");
-  } else if (!noteDesc) {
-    alert("내용을 입력하세요 :(");
-  } else {
+  if (noteName || noteTitle || noteDesc) {
     let dateObj = new Date(); //현재 시간 생성
     // 년,월,일 빼오기
     let year = dateObj.getFullYear();
@@ -151,6 +144,7 @@ addBtn.addEventListener("click", (e) => {
     closeIcon.click(); //등록버튼에 closeIcon클릭효과 넣음
     showNotes();
   }
+
   // 클릭하는 순간 컬러값이 변하기 때문에 클릭했을 때마다 컬러 값을 밖에 colorList배열변수를 만들어 변하지 않게 저장한다.
   let note = document.querySelectorAll(".note");
   let colorCode = "#" + Math.round(Math.random() * 0xffffff).toString(16);
