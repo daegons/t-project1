@@ -1,0 +1,96 @@
+@media (max-width: 768px) {
+    .titleWrap {
+        display: flex;
+        flex: 1 1 0;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        scale: .7;
+        animation: scaleUp2 3.5s linear alternate;
+    }
+
+    
+@keyframes scaleUp2 {
+    0%{
+        scale: .1;
+        opacity: 0;
+    }
+    10%{
+        opacity: 0;
+    }
+    50%{
+        scale: .2;
+        opacity: .5;
+    }
+    55%{
+        scale: 1.3;
+        opacity: 1;
+    }
+    70%{
+        scale: 1.3;
+    }
+    97%{
+        scale: 1.35;
+    }
+    100%{
+        scale: .7;
+    }
+}
+
+    .adSkip {
+        position: absolute;
+        bottom: 150px;
+        right: 50%;
+        transform: translateX(50%);
+        border: 1px solid aliceblue;
+        width: 190px;
+        height: 70px;
+        text-align: center;
+        line-height: 70px;
+        font-size: 30px;
+        color: aliceblue;
+        cursor: pointer;
+        animation: blink .5s ease alternate infinite;
+        transition: all .3s;
+    }
+}
+
+@media (max-width: 568px) {
+    .titleWrap {
+        display: flex;
+        flex: 1 1 0;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        scale: .5;
+        animation: scaleUp3 3.5s linear alternate;
+    }
+
+    @keyframes scaleUp3 {
+        0%{
+            scale: .1;
+            opacity: 0;
+        }
+        10%{
+            opacity: 0;
+        }
+        50%{
+            scale: .16;
+            opacity: .5;
+        }
+        55%{
+            scale: .75;
+            opacity: 1;
+        }
+        70%{
+            scale: .8;
+        }
+        97%{
+            scale: .83;
+        }
+        100%{
+            scale: .5;
+        }
+    }
+
+}

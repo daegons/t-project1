@@ -989,7 +989,7 @@ select {
   border-radius: 30px;
   transition: all .5s;
 }
-
+/* 
 .mright .img1:hover::after {
   display: block;
   position: absolute;
@@ -1036,7 +1036,7 @@ select {
   border-radius: 30px;
   text-align: center;
   line-height: 280px;
-}
+} */
 
 .mright .imgRandom img {
   width: 100%;

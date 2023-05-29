@@ -10,7 +10,7 @@ imgBox.appendChild(cloneFirst);
 let btn = document.querySelector(".img1"); // 버튼 클릭 함수 실행을 위한 변수
 let btnAll = document.querySelectorAll(".img1"); // 버튼 클릭 함수 실행을 위한 변수
 let count = 0;
-
+let transitionInProgress = false; 
 
 
 
@@ -18,15 +18,20 @@ if (window.innerWidth > 625) {
   document.querySelector(".imgBox").style.left = "-450px";
 
   function imgSlideShow() {
+    if (transitionInProgress) return; 
+    transitionInProgress = true; 
+
     imgBox.style.transition = `all 1s`;
     if (count < imgWrap.length - 1) {
       count++;
       imgBox.style.transform = `translate(${count * -450}px)`;
-    } else if (count == imgWrap.length - 1) {
+      transitionInProgress = false;
+    } else if (count === imgWrap.length - 1) {
       imgBox.style.transform = `translate(${(count + 1) * -450}px)`;
       setTimeout(() => {
         imgBox.style.transition = `0s`;
         imgBox.style.transform = `translateX(0px)`;
+        transitionInProgress = false;
       }, 1000);
       count = 0;
     }
@@ -36,55 +41,75 @@ if (window.innerWidth > 625) {
   btnAll[0].style.background = "rgb(255, 255, 255, 1)";
 
   function prevSlide() {
+    if (transitionInProgress) return; 
+    transitionInProgress = true;
+
     imgBox.style.transition = `all 1s`;
     if (count > 0) {
       count--;
-      document.querySelector(".imgBox").style.transform = `translate(${count * -450
-        }px)`;
+      document.querySelector(".imgBox").style.transform = `translate(${count * -450}px)`;
       btnAll.forEach((i) => (i.style.background = "rgb(255, 255, 255, .5)"));
       btnAll[count].style.background = "rgb(255, 255, 255, 1)";
+      imgBox.addEventListener("transitionend", () => {
+        transitionInProgress = false; 
+      })
     } else if (count === 0) {
       imgBox.style.transform = `translate(450px)`;
       setTimeout(() => {
         imgBox.style.transition = `0s`;
         imgBox.style.transform = `translateX(${(imgWrap.length - 1) * -450}px)`;
+        imgBox.addEventListener("transitionend", () => {
+        transitionInProgress = false; 
+      })
       }, 1000);
-      return (count = imgWrap.length - 1);
+      count = imgWrap.length - 1;
     }
   }
 
   function nextSlide() {
+    if (transitionInProgress) return; 
+    transitionInProgress = true; 
+
     imgBox.style.transition = `all 1s`;
     if (count < imgWrap.length - 1) {
       count++;
-      document.querySelector(".imgBox").style.transform = `translate(${count * -450
-        }px)`;
+      document.querySelector(".imgBox").style.transform = `translate(${count * -450}px)`;
       btnAll.forEach((i) => (i.style.background = "rgb(255, 255, 255, .5)"));
       btnAll[count].style.background = "rgb(255, 255, 255, 1)";
+      imgBox.addEventListener("transitionend", () => {
+        transitionInProgress = false; 
+      })
     } else if (count === imgWrap.length - 1) {
       imgBox.style.transform = `translate(${(count + 1) * -450}px)`;
       setTimeout(() => {
         imgBox.style.transition = `0s`;
         imgBox.style.transform = `translateX(0px)`;
+        transitionInProgress = false; 
       }, 1000);
-      return (count = 0);
+      count = 0;
     }
   }
 }
 
 if (window.innerWidth <= 625) {
   document.querySelector(".imgBox").style.left = "-280px";
+  
 
   function imgSlideShow() {
+    if (transitionInProgress) return; 
+    transitionInProgress = true;
+
     imgBox.style.transition = `all 1s`;
     if (count < imgWrap.length - 1) {
       count++;
       imgBox.style.transform = `translate(${count * -280}px)`;
+      transitionInProgress = false;
     } else if (count == imgWrap.length - 1) {
       imgBox.style.transform = `translate(${(count + 1) * -280}px)`;
       setTimeout(() => {
         imgBox.style.transition = `0s`;
         imgBox.style.transform = `translateX(0px)`;
+        transitionInProgress = false;
       }, 1000);
       count = 0;
     }
@@ -94,6 +119,9 @@ if (window.innerWidth <= 625) {
   btnAll[0].style.background = "rgb(255, 255, 255, 1)";
 
   function prevSlide() {
+    if (transitionInProgress) return; 
+    transitionInProgress = true;
+
     imgBox.style.transition = `all 1s`;
     if (count > 0) {
       count--;
@@ -101,17 +129,24 @@ if (window.innerWidth <= 625) {
         }px)`;
       btnAll.forEach((i) => (i.style.background = "rgb(255, 255, 255, .5)"));
       btnAll[count].style.background = "rgb(255, 255, 255, 1)";
+      imgBox.addEventListener("transitionend", () => {
+        transitionInProgress = false; 
+      })
     } else if (count === 0) {
       imgBox.style.transform = `translate(280)`;
       setTimeout(() => {
         imgBox.style.transition = `0s`;
         imgBox.style.transform = `translateX(${(imgWrap.length - 1) * -280}px)`;
+        transitionInProgress = false;
       }, 1000);
       return (count = imgWrap.length - 1);
     }
   }
 
   function nextSlide() {
+    if (transitionInProgress) return; 
+    transitionInProgress = true;
+    
     imgBox.style.transition = `all 1s`;
     if (count < imgWrap.length - 1) {
       count++;
@@ -119,11 +154,15 @@ if (window.innerWidth <= 625) {
         }px)`;
       btnAll.forEach((i) => (i.style.background = "rgb(255, 255, 255, .5)"));
       btnAll[count].style.background = "rgb(255, 255, 255, 1)";
+      imgBox.addEventListener("transitionend", () => {
+        transitionInProgress = false; 
+      })
     } else if (count === imgWrap.length - 1) {
       imgBox.style.transform = `translate(${(count + 1) * -280}px)`;
       setTimeout(() => {
         imgBox.style.transition = `0s`;
         imgBox.style.transform = `translateX(0px)`;
+        transitionInProgress = false;
       }, 1000);
       return (count = 0);
     }
@@ -137,7 +176,7 @@ let pre = document.querySelector(".pre"); //마우스 호버시 슬라이드 멈
 let innerStop = document.querySelector(".innerStop");
 
 // 슬라이드 막기
-let slideControl = setInterval(imgSlideShow, 5000);
+let slideControl = setInterval(imgSlideShow, 3000);
 let go = false;
 
 if (!go) {
@@ -145,13 +184,13 @@ if (!go) {
     clearInterval(slideControl);
   });
   next.addEventListener("mouseout", () => {
-    return (slideControl = setInterval(imgSlideShow, 5000));
+    return (slideControl = setInterval(imgSlideShow, 3000));
   });
   pre.addEventListener("mouseover", () => {
     clearInterval(slideControl);
   });
   pre.addEventListener("mouseout", () => {
-    return (slideControl = setInterval(imgSlideShow, 5000));
+    return (slideControl = setInterval(imgSlideShow, 3000));
   });
 }
 
@@ -169,7 +208,7 @@ function stopSlide() {
   } else {
     innerStop.innerText = "||";
     go = false;
-    return (slideControl = setInterval(imgSlideShow, 5000));
+    return (slideControl = setInterval(imgSlideShow, 3000));
   }
 }
 

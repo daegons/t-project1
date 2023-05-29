@@ -1,0 +1,87 @@
+@media (max-width: 768px) {
+
+    .bg .earthWrap .earth {
+        width: 480px;
+        height: 480px;
+        border-radius: 50%;
+        background-image: url(../img/earth.png);
+        background-size: cover;
+        box-shadow: -20px -50px -20px -20px #000;
+        animation: earthR 30s linear infinite;
+    }
+
+    .plzScroll {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 306px;
+        transform: translate(-50%, -50%);
+        color: #e0e0e0;
+        font-size: 26px;
+        letter-spacing: 7px;
+        z-index: 999;
+        animation: scrollBlink 2s ease infinite;
+    }
+
+    .bg .earthWrap .earth::after {
+        display: block;
+        content: '';
+        width: 480px;
+        height: 480px;
+        border-radius: 50%;
+        background-size: cover;
+        background: radial-gradient(circle closest-side at 45% 45%, transparent 50%, rgb(0, 0, 0, .4) 75%, rgb(0, 0, 0, .5) 85%, rgb(0, 0, 0, .6) 88%, rgb(0, 0, 0, .85) 98%, rgb(0, 0, 0) 110%, rgb(0, 0, 0, .1) 250%);
+        animation: earthR 100s linear infinite;
+    }
+
+    .bg .textWrap {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 300vw;
+        font-size: 130px;
+        font-weight: 900;
+        color: aliceblue;
+        text-align: center;
+        letter-spacing: -10px;
+    }
+
+    .typingWrap .typing {
+        position: absolute;
+        width: 340.6px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .typing a {
+        display: none;
+        white-space: nowrap;
+        border-right: 5px solid;
+        overflow: hidden;
+        font-size: 20px;
+        font-weight: 300;
+        letter-spacing: .05em;
+        color: aliceblue;
+    }
+
+    .typingWrap .typing2 {
+        position: absolute;
+        width: 270.2px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .typing2 a {
+        display: none;
+        white-space: nowrap;
+        border-right: 5px solid;
+        overflow: hidden;
+        font-size: 20px;
+        font-weight: 300;
+        letter-spacing: .05em;
+        color: aliceblue;
+    }
+}

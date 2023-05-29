@@ -19,12 +19,12 @@ imgChange.addEventListener("click", () => {
   change3 += `<img src="./img/${randomValue-1}.jpg" alt="#" />`;
   
   $(".imgRandom > img ").remove();
-  $(".img1").append(change1);
+  $(".imgR1").append(change1);
   setTimeout(function() {
-    $(".img2").append(change2);
+    $(".imgR2").append(change2);
   }, 100);
   setTimeout(function() {
-    $(".img3").append(change3);
+    $(".imgR3").append(change3);
   }, 200);
 });
 
