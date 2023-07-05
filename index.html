@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 보안 문제로 추가 -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <!-- 보안 문제로 추가 -->
     <title>Document</title>
     <link
       rel="stylesheet"
@@ -318,7 +321,7 @@
     <div id="map" style="width: 60%; height: 500px; display: none"></div>
     <script
       type="text/javascript"
-      src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=e00ed7e6b241653cafa74d8894800a9c&libraries=services,clusterer,drawing"
+      <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e00ed7e6b241653cafa74d8894800a9c"></script>
     ></script>
     <script src="./js/common.js"></script>
     <script src="./js/main.js"></script>

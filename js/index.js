@@ -11,7 +11,7 @@ var mapContainer = document.getElementById("map"), // 지도를 표시할 div
 var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
 function mapOpen() {
-    mapContainer.style.display = "block";
+  mapContainer.style.display = "block";
 }
 
 // 지도를 전달받은 위도, 경도 값으로 부드럽게 이동시키는 함수
@@ -29,7 +29,7 @@ var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
 
 // 화면에 마커를 표시하는 함수
 var markers = [];
-function addMarker(position, nameAll,lat, lng, address, phone) {
+function addMarker(position, nameAll, lat, lng, address, phone) {
   var marker = new kakao.maps.Marker({
     map: map, //
     position: position,
@@ -97,49 +97,49 @@ $.get("./json/info.json", function (data) {
 //----------------------정보박스------------------------------
 function cityMarker(city) {
   // 시도명을 인수로 받아 마크를 표시하는 함수선언
-  if(city != 'none'){
-  let cityList = global.filter((a) => {
-    let sidoList = a.sidoName.split(" ");
-    return sidoList[0] === city;
-  });
+  if (city != "none") {
+    let cityList = global.filter((a) => {
+      let sidoList = a.sidoName.split(" ");
+      return sidoList[0] === city;
+    });
 
-  for (let i in cityList) {
-    addMarker(
-      new kakao.maps.LatLng(cityList[i].lat, cityList[i].lng),
-      cityList[i].name,
-      cityList[i].lat,
-      cityList[i].lng,
-      cityList[i].address,
-      cityList[i].phone,
-    );
+    for (let i in cityList) {
+      addMarker(
+        new kakao.maps.LatLng(cityList[i].lat, cityList[i].lng),
+        cityList[i].name,
+        cityList[i].lat,
+        cityList[i].lng,
+        cityList[i].address,
+        cityList[i].phone
+      );
+    }
+
+    // 지도위치를 현재 선택한 도시의 첫번째 레코드의 위도, 경도값으로 이동하는 함수 호출
+    panTo(cityList[0].lat, cityList[0].lng);
   }
-
-  // 지도위치를 현재 선택한 도시의 첫번째 레코드의 위도, 경도값으로 이동하는 함수 호출
-  panTo(cityList[0].lat, cityList[0].lng);
- }
 }
 
 // 시도명을 인수로 받아 마크를 표시하는 함수선언
 function cityMarker2(city) {
-  if(city != 'none'){
-  let cityList = global.filter((a) => {
-    let sidoList = a.sidoName.split(" ");
-    return sidoList[1] === city;
-  });
-  for (let i in cityList) {
-    addMarker(
-      new kakao.maps.LatLng(cityList[i].lat, cityList[i].lng),
-      cityList[i].name,
-      cityList[i].lat,
-      cityList[i].lng,
-      cityList[i].address,
-      cityList[i].phone,
-    );
-  }
+  if (city != "none") {
+    let cityList = global.filter((a) => {
+      let sidoList = a.sidoName.split(" ");
+      return sidoList[1] === city;
+    });
+    for (let i in cityList) {
+      addMarker(
+        new kakao.maps.LatLng(cityList[i].lat, cityList[i].lng),
+        cityList[i].name,
+        cityList[i].lat,
+        cityList[i].lng,
+        cityList[i].address,
+        cityList[i].phone
+      );
+    }
 
-  // 지도위치를 현재 선택한 도시의 첫번째 레코드의 위도, 경도값으로 이동하는 함수 호출
-  panTo(cityList[0].lat, cityList[0].lng);
-}
+    // 지도위치를 현재 선택한 도시의 첫번째 레코드의 위도, 경도값으로 이동하는 함수 호출
+    panTo(cityList[0].lat, cityList[0].lng);
+  }
 }
 
 // 시도명을 인수로 받아 구군셀렉트를 나타내는 함수선언
@@ -183,16 +183,12 @@ function useData(globalData) {
   cityIndex.sort();
 
   let button = `<option id="btnn" value="none">지역을 선택해주세요.</option>`;
-  
 
   cityIndex.map((value) => {
     button += `<option id="btnn" value="${value}">${value}</option>`;
   });
-  $('#btn').html(button)
+  $("#btn").html(button);
 }
-
-
-
 
 //이벤트
 $("#detail").change(function () {
@@ -208,7 +204,6 @@ $("#btn").click((e) => {
   sebu(city);
   $(this).addClass("on");
   map.getLevel = 10;
-  
 });
 
 var level = map.getLevel();
@@ -237,7 +232,7 @@ function weather(nameAll, lnga, latb) {
 
   function getWeather(lat, lon) {
     $.ajax({
-      url: `https://api.openweathermap.org/data/2.5/weather?lat=${lngaa}&lon=${latbb}&appid=c2d0e5bbe716ac60f8541d884dda4c9c&lang=${lang}`,
+      url: `https://api.openweathermap.org/data/2.5/weather?lat=${lngaa}&lon=${latbb}&appid=834a9a8e47b405ff8987480e3bbd7658&lang=${lang}`,
       type: "GET",
       data: { units: "metric" }, // 섭씨로 변환
       success: function (data) {
@@ -297,7 +292,7 @@ function weather(nameAll, lnga, latb) {
           var num = numberWithCommas(this.val.toFixed(1));
           $(".tempInfo").text(num);
         },
-      },
+      }
     );
     document.querySelector(".left2 .nowTemp span").style.display =
       "inline-block";
